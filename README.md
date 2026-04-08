@@ -16,7 +16,7 @@
 
 <h3 align="center">📫 Как связаться со мной: </h3>
 <p align="center">
- <a href="mailto:alina_rozhkova_93@mail.ru"><img src="https://logo-teka.com/wp-content/uploads/2025/08/mail-ru-sign-logo.png" alt="mailto:alina_rozhkova_93@mail.ru" style="max-width:35px;" /></a>
+ <a href="mailto:alina_rozhkova_93@mail.ru"><img src="https://logo-teka.com/wp-content/uploads/2025/08/mail-ru-sign-logo.png" alt="mailto:alina_rozhkova_93@mail.ru" width="40" height="40";" /></a>
    <a href="https://t.me/ibelieveicanflyy"><img src="https://img.icons8.com/?size=512&id=63306&format=png" width="40" height="40" alt="Telegram"/></a>
   <a href="mailto:alina.rozhkova.93@gmail.com"><img src="https://img.icons8.com/?size=512&id=P7UIlhbpWzZm&format=png" width="40" height="40" alt="Gmail"/></a>
 </p>
