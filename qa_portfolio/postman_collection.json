@@ -1,0 +1,503 @@
+{
+  "info": {
+    "_postman_id": "6ea63c9b-54e5-482f-af32-2ffb995133de",
+    "name": "DemoShopping (практика stepik)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43047105",
+    "_collection_link": "https://go.postman.co/collection/43047105-6ea63c9b-54e5-482f-af32-2ffb995133de?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Весь список продуктов",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/products",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Добавление нового товара",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Example Product\",\r\n  \"description\": \"This is an example product.\",\r\n  \"price\": 500,\r\n  \"category\": \"Electronics\",\r\n  \"manufacturer\": \"Omerika\",\r\n  \"imageUrl\": \"http://example.com/image.jpg\",\r\n  \"freeShipping\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/add-product",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "add-product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Поиск товара по ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tesla\",\r\n  \"description\": \"string\",\r\n  \"price\": 2500,\r\n  \"category\": \"electronic car\",\r\n  \"manufacturer\": \"Omerika\",\r\n  \"imageUrl\": \"string\",\r\n  \"freeShipping\": true\r\n}"
+            },
+            "url": {
+              "raw": "{{URL}}/products/id/{{productID}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products",
+                "id",
+                "{{productID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Удаление товара по ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/products/id/{{productID}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products",
+                "id",
+                "{{productID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Обновление цены, имени, категории и производителя товара по ID (Полное обновление товара)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tesla\",\r\n  \"description\": \"string\",\r\n  \"price\": 1500,\r\n  \"category\": \"electronic car\",\r\n  \"manufacturer\": \"Omerika\",\r\n  \"imageUrl\": \"string\",\r\n  \"freeShipping\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/products/id/{{productID}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products",
+                "id",
+                "{{productID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Изменение цены товара по ID (Частичное изменение товара)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tesla\",\r\n  \"description\": \"string\",\r\n  \"price\": 2500,\r\n  \"category\": \"electronic car\",\r\n  \"manufacturer\": \"Omerika\",\r\n  \"imageUrl\": \"string\",\r\n  \"freeShipping\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/products/id/{{productID}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products",
+                "id",
+                "{{productID}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Поиск товара по категории товара electronic car",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://intern.demoshopping.ru/products/FindByCategory?category=electronic car",
+              "protocol": "https",
+              "host": [
+                "intern",
+                "demoshopping",
+                "ru"
+              ],
+              "path": [
+                "products",
+                "FindByCategory"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "electronic car"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Поиск товаров с бесплатной доставкой",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/products/FindByShipping?freeShipping=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products",
+                "FindByShipping"
+              ],
+              "query": [
+                {
+                  "key": "freeShipping",
+                  "value": "true"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Фильтрация списка товаров по категории и цене",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/products/filter?category=Phones&minPrice=630",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "products",
+                "filter"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Phones",
+                  "type": "text"
+                },
+                {
+                  "key": "minPrice",
+                  "value": "630",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "item": [
+        {
+          "name": "Добавление товара в корзину пользователя",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{key}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"productId\": {{productID}},\r\n  \"quantity\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/cart",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Добавление товара в корзину пользователя 2",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{key}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"productId\": {{productID}},\r\n  \"quantity\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/cart",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "cart"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Возвращение содержимого корзины пользователя",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{key}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/getCart",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "getCart"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Обновление количества товара в корзине",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{key}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"quantity\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/cart/18516",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "cart",
+                "18516"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{key}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/cart/18516",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "cart",
+                "18516"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Авторизация пользователя",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {\r",
+                  "    const responseData = pm.response.json();\r",
+                  "    const authToken = responseData.key; // <-- Забираем значение из поля \"key\"\r",
+                  "    \r",
+                  "    if (authToken) {\r",
+                  "        pm.collectionVariables.set(\"token\", authToken); // Сохраняем в переменную (название переменной можете оставить token)\r",
+                  "        pm.collectionVariables.set(\"token_time\", Date.now());\r",
+                  "        console.log(\"Токен сохранен:\", authToken);\r",
+                  "    } else {\r",
+                  "        console.log(\"Поле 'key' не найдено в ответе\");\r",
+                  "    }\r",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Alina1103\",\r\n  \"password\": \"Password9\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/login",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Card",
+      "item": [
+        {
+          "name": "Оплата заказов пользователя",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
